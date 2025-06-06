@@ -1,6 +1,3 @@
-# CashRegisterProject-FINAL
-A Cash Register System inspired by Mang Inasal.
-
 import java.util.*;
 import java.util.regex.*;
 import java.io.*;
@@ -1057,6 +1054,9 @@ public class Main {
                         sufficient = sufPayment - requiredTotal;
 
                         if(sufficient + EPSILON >= 0){
+                            if (sufficient > -0.01 && sufficient < 0.01) {
+                                sufficient = 0.0;
+                            }
                             System.out.printf("Payment: P%.2f%n", sufPayment);
                             System.out.printf("Change: P%.2f%n", sufficient);
                             System.out.println("-----------------------------------");
